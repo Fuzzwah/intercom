@@ -1,4 +1,4 @@
-from pymumble.pymumble_py3 import Mumble, constants
+from pymumble_py3 import Mumble, constants
 import alsaaudio
 
 class MumbleClient:
