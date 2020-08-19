@@ -21,7 +21,7 @@ The installation procedure assumes a Raspbian Wheezy or similar OS.
 Everything is done via command line.
 
 ## Install dependencies
-- install dependencies `sudo apt-get install git python3-dev python3-pip libsound2-dev libopus-dev`
+- install dependencies `sudo apt-get install git python3-dev python3-venv python3-pip libasound2-dev libopus-dev`
 
 ## Install a mumble server
 
@@ -36,14 +36,12 @@ Mumble server should now start automatically upon restart
 
 ## Python and friends
 
-- Install virtualenv in your project folder `sudo pip3 install virtualenv`
-- Create a new virtualenv `virtualenv -p /usr/bin/python3 venv`
-- Activate it `source venv/bin/activate`
-
-- clone this git repo `git clone https://github.com/pkronstrom/intercom`
+- clone this git repo `git clone https://github.com/Fuzzwah/intercom`
+- change into the new `intercom` directory `cd intercom`
 - update submodules `git submodule update --recursive`
+- Create a new virtualenv `python3 -m venv .env`
+- Activate it `source .env/bin/activate`
 - `pip install -r requirements.txt`
-- `python pymumble/setup.py install`
 
 # Hardware Installation and configuration
 - Plug the USB sound card in and attach your mic and speaker to it.
