@@ -12,13 +12,15 @@ class InterCom:
         self.exit = False
 
     def run(self):
-        while not self.exit:
-            self.mumble_client.send_input_audio()
-        
+        self.mumble_client.send_input_audio()
+    
+    def stop(self):
+        self.mumble_client.clear_input()
+
 if __name__ == '__main__':
     try:
-        intercom = InterCom().run()
+        InterCom().run()
     except KeyboardInterrupt:
-        intercom.mumble_client.clear_input()
+        InterCom().stop()
     except Exception as e:
         raise e
