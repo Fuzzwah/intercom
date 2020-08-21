@@ -9,18 +9,17 @@ class InterCom:
         config = configparser.ConfigParser()
         config.read('intercom.ini')
         self.mumble_client = MumbleClient(config['mumbleclient'])
-        self.exit = False
 
     def run(self):
-        self.mumble_client.send_input_audio()
+        while 1 == 1:
+            self.mumble_client.send_input_audio()
     
     def stop(self):
         self.mumble_client.clear_input()
 
 if __name__ == '__main__':
     try:
-        while 1 == 1:
-            InterCom().run()
+        InterCom().run()
     except KeyboardInterrupt:
         InterCom().stop()
     except Exception as e:
