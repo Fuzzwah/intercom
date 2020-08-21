@@ -19,7 +19,8 @@ class InterCom:
 
 if __name__ == '__main__':
     try:
-        InterCom().run()
+        while 1 == 1:
+            InterCom().run()
     except KeyboardInterrupt:
         InterCom().stop()
     except Exception as e:
